@@ -1,0 +1,3 @@
+[submodule "minlibd"]
+	path = minlibd
+	url = https://github.com/shinyquagsire23/minlibd.git
