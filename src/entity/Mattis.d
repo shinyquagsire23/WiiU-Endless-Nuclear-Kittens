@@ -136,7 +136,7 @@ public class Mattis : BaseEntity, Hurtable {
         currentAnimator = idleAnimator;
         currentMuzzleAnimator = muzzleAnimator;
 
-        setWeapon(new Blink(game.mattis, 5));
+        //setWeapon(new Blink(game.mattis, 5));
         setWeapon(new Blaster(game.mattis, 1));
     }
 
