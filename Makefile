@@ -60,11 +60,15 @@ $(BUILD):
 clean:
 	@echo "[RM]  $(notdir $(OUTPUT))"
 	@rm -rf $(BUILD) $(OUTPUT).elf $(OUTPUT).rpx $(OUTPUT).a
+	@rm $(OUTPUT)/code/*.rpx
 
 else
 
 DEPENDS	:= $(OFILES:.o=.dep)
 
+$(OUTPUT).woomy: $(OUTPUT).rpx
+	cp $(OUTPUT).rpx $(OUTPUT)/code/
+	makefst -out $(OUTPUT).woomy -name "Endless Nuclear Kittens" -internal "Application" -entry "nuclear" -icon "$(OUTPUT)/meta/iconTex.tga" $(OUTPUT)/
 $(OUTPUT).rpx: $(OUTPUT).elf
 $(OUTPUT).elf: $(OFILES)
 
